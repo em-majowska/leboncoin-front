@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 768px; /* le bouton Déposer une annonce passe en dessous de C'est le moment de vendre ; */
+  --breakpoint-md: 970px;
+  --breakpoint-lg: 1050px;
+}

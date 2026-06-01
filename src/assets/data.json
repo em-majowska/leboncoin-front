@@ -1,0 +1,296 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699237/apollo/alternance/react/tailwind/leboncoin/categories/vetements_kv8hys.avif",
+      "title": "Vêtements"
+    },
+    {
+      "id": 1,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699236/apollo/alternance/react/tailwind/leboncoin/categories/vacances_onzlf3.avif",
+      "title": "Vacances"
+    },
+    {
+      "id": 2,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699233/apollo/alternance/react/tailwind/leboncoin/categories/astuces_maison_ri1g9p.avif",
+      "title": "Astuces Maison"
+    },
+    {
+      "id": 3,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699233/apollo/alternance/react/tailwind/leboncoin/categories/offres_emploi_wwdzrb.avif",
+      "title": "Offres d'emploi"
+    },
+    {
+      "id": 4,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699237/apollo/alternance/react/tailwind/leboncoin/categories/ventes_immo_oipcc3.avif",
+      "title": "Ventes immo"
+    },
+    {
+      "id": 5,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699236/apollo/alternance/react/tailwind/leboncoin/categories/voitures_nfwbfk.avif",
+      "title": "Voitures"
+    },
+    {
+      "id": 6,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699235/apollo/alternance/react/tailwind/leboncoin/categories/ameublement_g4sinv.avif",
+      "title": "Ameublement"
+    },
+    {
+      "id": 7,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699233/apollo/alternance/react/tailwind/leboncoin/categories/electromenager_wguf7h.avif",
+      "title": "Electroménager"
+    },
+    {
+      "id": 8,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699235/apollo/alternance/react/tailwind/leboncoin/categories/decoration_bpgldf.avif",
+      "title": "Décoration"
+    },
+    {
+      "id": 9,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699234/apollo/alternance/react/tailwind/leboncoin/categories/informatique_b19chx.avif",
+      "title": "Ordinateurs"
+    },
+    {
+      "id": 10,
+      "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699234/apollo/alternance/react/tailwind/leboncoin/categories/livres_trwspo.avif",
+      "title": "Livres"
+    }
+  ],
+  "products": {
+    "tablets": [
+      {
+        "id": 0,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699199/apollo/alternance/react/tailwind/leboncoin/avatars/amigos_rqv2ol.jpg",
+        "username": "Amigos67",
+        "stars": 5,
+        "comments": 59,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699303/apollo/alternance/react/tailwind/leboncoin/products/tablettes/galaxy-tab-A8_j8efdj.jpg",
+        "title": "Samsung galaxy tab A8",
+        "price": 110,
+        "delivery": true,
+        "place": "Divion 62460",
+        "date": "13/08/2024"
+      },
+      {
+        "id": 1,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699199/apollo/alternance/react/tailwind/leboncoin/avatars/apo_arzyp6.jpg",
+        "username": "Aporinas",
+        "stars": 4.5,
+        "comments": 34,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699303/apollo/alternance/react/tailwind/leboncoin/products/tablettes/kindle-11_ybenfv.jpg",
+        "title": "Liseuse kindle",
+        "price": 115,
+        "delivery": true,
+        "place": "Montpellier 34000",
+        "date": "12/07/2024"
+      },
+      {
+        "id": 2,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699201/apollo/alternance/react/tailwind/leboncoin/avatars/bip_gvjnw5.jpg",
+        "username": "Bip-Bip",
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699303/apollo/alternance/react/tailwind/leboncoin/products/tablettes/lenovo-p11-plus_camxpl.jpg",
+        "title": "Tablette LENOVO P11 Plus - 11\", 128 Go, 2K (Neuve sous blister)",
+        "price": 190,
+        "place": "Chevilly-Larue 94550",
+        "date": "31/01/2024"
+      },
+      {
+        "id": 3,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699200/apollo/alternance/react/tailwind/leboncoin/avatars/clemp_fyovhv.jpg",
+        "username": "Clement Portos",
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699305/apollo/alternance/react/tailwind/leboncoin/products/tablettes/lenovo_kbtww0.jpg",
+        "title": "Tablette Lenovo",
+        "price": 220,
+        "delivery": true,
+        "place": "Sartrouville 78500",
+        "date": "08/12/2023"
+      },
+      {
+        "id": 4,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699201/apollo/alternance/react/tailwind/leboncoin/avatars/delvareamils_u1xoiy.jpg",
+        "username": "Amils Delvare",
+        "stars": 3,
+        "comments": 12,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699305/apollo/alternance/react/tailwind/leboncoin/products/tablettes/lexitab-indigo_nxwa8v.jpg",
+        "title": "Tablette Lexitab indigo",
+        "price": 50,
+        "delivery": true,
+        "place": "Cornebarieu 31700",
+        "date": "22/02/2024"
+      },
+      {
+        "id": 5,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699201/apollo/alternance/react/tailwind/leboncoin/avatars/fireowl_qzwppd.jpg",
+        "username": "Chouette Enflammée",
+        "stars": 5,
+        "comments": 220,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699304/apollo/alternance/react/tailwind/leboncoin/products/tablettes/samsung-A9-plus_pnt4yo.jpg",
+        "title": "Samsung Galaxy Tab A8 +",
+        "price": 220,
+        "place": "Paris 75012",
+        "date": "19/04/2024"
+      },
+      {
+        "id": 6,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699202/apollo/alternance/react/tailwind/leboncoin/avatars/florent_wlkndq.jpg",
+        "username": "Florent T.",
+        "stars": 2,
+        "comments": 34,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699305/apollo/alternance/react/tailwind/leboncoin/products/tablettes/samsung-galaxy-note-10_i3gkix.jpg",
+        "title": "Samsung Galaxy Note 10",
+        "price": 53,
+        "place": "Menucourt 95180",
+        "date": "04/05/2024"
+      },
+      {
+        "id": 7,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699200/apollo/alternance/react/tailwind/leboncoin/avatars/joy78_y35twt.jpg",
+        "username": "Joy 78 :)",
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699307/apollo/alternance/react/tailwind/leboncoin/products/tablettes/samsung-tab-s2_fnbfv2.jpg",
+        "title": "Tablette Samsung Tab S2",
+        "price": 120,
+        "place": "Lavilletertre 60240",
+        "date": "14/08/2024"
+      },
+      {
+        "id": 8,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699199/apollo/alternance/react/tailwind/leboncoin/avatars/keke_vdqcsn.jpg",
+        "username": "Keke 2 P14g3",
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699306/apollo/alternance/react/tailwind/leboncoin/products/tablettes/support_s4wrwk.jpg",
+        "title": "Tablette de support de livre",
+        "price": 15,
+        "place": "Marly 57155",
+        "date": "12/08/2024"
+      },
+      {
+        "id": 9,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699200/apollo/alternance/react/tailwind/leboncoin/avatars/sebastien_cu9yvh.jpg",
+        "username": "Seb",
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699306/apollo/alternance/react/tailwind/leboncoin/products/tablettes/tactile-2_s7ms4z.jpg",
+        "title": "Tablette tactile 2 en 1",
+        "price": 50,
+        "place": "Aureville 31320",
+        "date": "03/05/2024"
+      }
+    ],
+    "consols": [
+      {
+        "id": 0,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699199/apollo/alternance/react/tailwind/leboncoin/avatars/amigos_rqv2ol.jpg",
+        "username": "Amélie 72",
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699933/apollo/alternance/react/tailwind/leboncoin/products/consoles/manette_wy2fht.jpg",
+        "title": "Manette sans fil compatible PS4 - Noir",
+        "price": 10,
+        "delivery": true,
+        "place": "Forges-les-Bains 91470",
+        "date": "19/08/2024"
+      },
+      {
+        "id": 1,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699199/apollo/alternance/react/tailwind/leboncoin/avatars/apo_arzyp6.jpg",
+        "username": "Alexandre le Grand",
+        "stars": 5,
+        "comments": 49,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699931/apollo/alternance/react/tailwind/leboncoin/products/consoles/cable_c749zf.jpg",
+        "title": "Cable alimentation pièce détachée",
+        "price": 9.9,
+        "delivery": true,
+        "place": "Vendin-le-Vieil 62880",
+        "date": "03/07/2024"
+      },
+      {
+        "id": 2,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699201/apollo/alternance/react/tailwind/leboncoin/avatars/bip_gvjnw5.jpg",
+        "username": "Billy Boule",
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699931/apollo/alternance/react/tailwind/leboncoin/products/consoles/playstation4_immbik.jpg",
+        "title": "Playsation 4",
+        "price": 180,
+        "delivery": true,
+        "place": "Longuyon 54260",
+        "date": "11/01/2024"
+      },
+      {
+        "id": 3,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699200/apollo/alternance/react/tailwind/leboncoin/avatars/clemp_fyovhv.jpg",
+        "username": "Cilian Murphy",
+        "stars": 5,
+        "comments": 3,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699934/apollo/alternance/react/tailwind/leboncoin/products/consoles/retrogaming_ilcfha.jpg",
+        "title": "Console retrogaming",
+        "price": 50,
+        "delivery": true,
+        "place": "Pontarlier 25300",
+        "date": "22/12/2023"
+      },
+      {
+        "id": 4,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699201/apollo/alternance/react/tailwind/leboncoin/avatars/delvareamils_u1xoiy.jpg",
+        "username": "Delvare Amils",
+        "stars": 5,
+        "comments": 49,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699930/apollo/alternance/react/tailwind/leboncoin/products/consoles/plasturgie_axe5vu.jpg",
+        "title": "Plasturgie inférieure pièce détachée - Sony playstation 1",
+        "price": 11.9,
+        "delivery": true,
+        "place": "Vendin-le-Vieil 62880",
+        "date": "06/01/2024"
+      },
+      {
+        "id": 5,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699201/apollo/alternance/react/tailwind/leboncoin/avatars/fireowl_qzwppd.jpg",
+        "username": "Owly Fire",
+        "stars": 5,
+        "comments": 49,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699932/apollo/alternance/react/tailwind/leboncoin/products/consoles/power-button_eq2ubj.jpg",
+        "title": "Bouton power pièce détachée - Sony playstation 1",
+        "price": 11.9,
+        "place": "Vendin-le-Vieil 62880",
+        "date": "19/04/2024"
+      },
+      {
+        "id": 6,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699202/apollo/alternance/react/tailwind/leboncoin/avatars/florent_wlkndq.jpg",
+        "username": "FloFlo",
+        "stars": 5,
+        "comments": 9,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699934/apollo/alternance/react/tailwind/leboncoin/products/consoles/ps4_jigya9.jpg",
+        "title": "Ps4",
+        "price": 90,
+        "place": "Montluçon 03100",
+        "date": "04/11/2024"
+      },
+      {
+        "id": 7,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699200/apollo/alternance/react/tailwind/leboncoin/avatars/joy78_y35twt.jpg",
+        "username": "Jean Sébastien Bach",
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699935/apollo/alternance/react/tailwind/leboncoin/products/consoles/xbox_sxbgfq.jpg",
+        "title": "Xbox série x",
+        "price": 380,
+        "place": "Saint-Clément 89100",
+        "date": "12/08/2024"
+      },
+      {
+        "id": 8,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699199/apollo/alternance/react/tailwind/leboncoin/avatars/keke_vdqcsn.jpg",
+        "username": "Koala",
+        "stars": 5,
+        "comments": 49,
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699932/apollo/alternance/react/tailwind/leboncoin/products/consoles/nappe_mfmgeg.jpg",
+        "title": "Nappe bloc manette pièce détachée - Sony playstation 1",
+        "price": 8.9,
+        "place": "Vendin-le-Vieil 62880",
+        "date": "10/08/2024"
+      },
+      {
+        "id": 9,
+        "avatar": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699200/apollo/alternance/react/tailwind/leboncoin/avatars/sebastien_cu9yvh.jpg",
+        "username": "Samuel L. Jackson",
+        "image": "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1715699930/apollo/alternance/react/tailwind/leboncoin/products/consoles/gameboy_gxmqkc.jpg",
+        "title": "Gameboy color et 14 jeux",
+        "price": 260,
+        "place": "Besançon 25000",
+        "date": "07/05/2024"
+      }
+    ]
+  }
+}
