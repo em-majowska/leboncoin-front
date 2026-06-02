@@ -10,6 +10,7 @@ import type {
   TProduct,
   TProducts,
   TProductsPayload,
+  TTheme,
 } from "./types";
 import Footer from "./components/Footer";
 import CategoryCarousel from "./components/CategoryCarousel";
@@ -17,7 +18,6 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { calculateTotal } from "./utils/calculateTotal";
 import FavModal from "./components/FavModal";
 import cn from "./utils/cn";
-import { useTheme } from "./utils/useTheme";
 
 function App() {
   const categories: TCategories = data.categories;
@@ -26,7 +26,7 @@ function App() {
   const [fav, setFav] = useState<[] | TProducts>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const { theme, setTheme } = useTheme();
+  const [theme, setTheme] = useState<TTheme>("white");
 
   const totalPrice = useMemo(() => calculateTotal(fav), [fav]);
 
