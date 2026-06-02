@@ -6,7 +6,20 @@ import { LuMessageSquareText, LuTicketPercent } from "react-icons/lu";
 import logo from "../assets/logo.svg";
 import type { TSetState } from "../types";
 import cn from "../utils/cn";
-import { memo } from "react";
+import { memo, useMemo } from "react";
+
+const CATEGORIES_LIST = [
+  "Immobilier",
+  "Véhicules",
+  "Locations de vacances",
+  "Emploi",
+  "Mode",
+  "Maison & Jardin",
+  "Famille",
+  "Électronique",
+  "Loisirs",
+  "Autres",
+];
 
 type TMobileMenuProps = {
   setIsMenuOpen: TSetState<boolean>;
@@ -14,6 +27,14 @@ type TMobileMenuProps = {
 };
 
 const MobileMenu = ({ setIsMenuOpen, isMenuOpen }: TMobileMenuProps) => {
+  const renderedCategories = useMemo(() => {
+    return CATEGORIES_LIST.map((cat) => (
+      <li key={cat}>
+        <MobileMenuItem>{cat}</MobileMenuItem>
+      </li>
+    ));
+  }, []);
+
   return (
     <nav
       className={cn(
@@ -77,38 +98,7 @@ const MobileMenu = ({ setIsMenuOpen, isMenuOpen }: TMobileMenuProps) => {
       <hr />
       <div className="flex flex-col gap-2 p-2">
         <p className="p-2 text-xs text-mist-600">Catégories</p>
-        <ul className="flex flex-col gap-1">
-          <li>
-            <MobileMenuItem>Immobilier</MobileMenuItem>
-          </li>
-          <li>
-            <MobileMenuItem>Véhicles</MobileMenuItem>
-          </li>
-          <li>
-            <MobileMenuItem>Vacances</MobileMenuItem>
-          </li>
-          <li>
-            <MobileMenuItem>Emploi</MobileMenuItem>
-          </li>
-          <li>
-            <MobileMenuItem>Mode</MobileMenuItem>
-          </li>
-          <li>
-            <MobileMenuItem>Maison & Jardin</MobileMenuItem>
-          </li>
-          <li>
-            <MobileMenuItem>Famille</MobileMenuItem>
-          </li>
-          <li>
-            <MobileMenuItem>Électronique</MobileMenuItem>
-          </li>
-          <li>
-            <MobileMenuItem>Loisirs</MobileMenuItem>
-          </li>
-          <li>
-            <MobileMenuItem>Autres</MobileMenuItem>
-          </li>
-        </ul>
+        <ul className="flex flex-col gap-1">{renderedCategories}</ul>
       </div>
     </nav>
   );

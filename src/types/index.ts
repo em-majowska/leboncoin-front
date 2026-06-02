@@ -29,8 +29,3 @@ export type TProductsPayload = {
 };
 
 export type TTheme = "white" | "black";
-
-export type TThemeContext = {
-  theme: TTheme;
-  setTheme: TSetState<TTheme>;
-};

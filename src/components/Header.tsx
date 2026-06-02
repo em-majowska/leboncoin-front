@@ -8,7 +8,7 @@ import NavButton from "./NavButton";
 import { FaRegBell, FaRegHeart, FaRegUser } from "react-icons/fa";
 import { LuMessageSquareText } from "react-icons/lu";
 import { TbSunMoon } from "react-icons/tb";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import type { TProducts, TSetState, TTheme } from "../types";
 import cn from "../utils/cn";
@@ -22,6 +22,9 @@ type THeaderProps = {
 const Header = ({ fav, setShowModal, setTheme }: THeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
+  const handleThemeToggle = useCallback(() => {
+    setTheme((prev) => (prev === "white" ? "black" : "white"));
+  }, [setTheme]);
   return (
     <header
       className={cn(
@@ -43,14 +46,7 @@ const Header = ({ fav, setShowModal, setTheme }: THeaderProps) => {
             </Button>
             <SearchInput type="desktop" />
             <div className="hidden gap-3 md:flex">
-              <NavButton
-                label="Thème"
-                onClick={() =>
-                  setTheme((prev: TTheme) =>
-                    prev === "white" ? "black" : "white",
-                  )
-                }
-              >
+              <NavButton label="Thème" onClick={handleThemeToggle}>
                 <TbSunMoon size="20px" />
               </NavButton>
               <NavButton label="Mes recherches">
