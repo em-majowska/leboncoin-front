@@ -4,10 +4,10 @@ import Header from "./components/Header";
 import Container from "./components/Container";
 import Headline from "./components/Headline";
 import data from "./assets/data.json";
-import Categories from "./components/Categories";
+import Categories from "./components/NavCategories";
 import type { TCategories, TProductsPayload } from "./types";
-import ProductsSections from "./components/ProductsSections";
 import Footer from "./components/Footer";
+import CategoryCarousel from "./components/CategoryCarousel";
 
 function App() {
   const categories: TCategories = data.categories;
@@ -27,7 +27,12 @@ function App() {
           </div>
           <Categories categories={categories} />
           <Headline label="En ce moment sur leboncoin" level={2} />
-          <ProductsSections products={products} />
+
+          <CategoryCarousel
+            category={products.tablets}
+            label="Tablettes & liseuses"
+          />
+          <CategoryCarousel category={products.consols} label="Consoles" />
         </Container>
       </main>
       <Footer />

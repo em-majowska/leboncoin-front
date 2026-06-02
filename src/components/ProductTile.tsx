@@ -54,7 +54,13 @@ const ProductTile = ({ product }: TProductTileProps) => {
               <span className="text-xs text-mist-500">{product.place}</span>
               <span className="text-xs text-mist-500">{product.date}</span>
             </div>
-            <button onClick={() => setIsFavourite(!isFavourite)}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                setIsFavourite(!isFavourite);
+              }}
+            >
               {isFavourite ? (
                 <FaHeart size="24px" />
               ) : (
