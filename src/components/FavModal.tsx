@@ -1,4 +1,5 @@
 import type { TProducts, TSetState } from "../types";
+import cn from "../utils/cn";
 import FavTile from "./FavTile";
 import Headline from "./Headline";
 
@@ -15,7 +16,9 @@ const FavModal = ({ fav, setShowModal, total }: TFavModalProps) => {
       onClick={() => setShowModal(false)}
     >
       <div
-        className="flex min-h-100 w-150 flex-col rounded-2xl bg-white px-6 py-4"
+        className={cn(
+          "dark:bg-dark-blue flex min-h-100 w-150 flex-col rounded-2xl bg-white px-6 py-4 dark:text-white",
+        )}
         onClick={(e) => e.stopPropagation()}
       >
         <Headline level={2} label="Mes Favoris" />

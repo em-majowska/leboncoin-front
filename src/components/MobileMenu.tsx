@@ -6,6 +6,7 @@ import { LuMessageSquareText, LuTicketPercent } from "react-icons/lu";
 import logo from "../assets/logo.svg";
 import type { TSetState } from "../types";
 import cn from "../utils/cn";
+import { memo } from "react";
 
 type TMobileMenuProps = {
   setIsMenuOpen: TSetState<boolean>;
@@ -113,4 +114,4 @@ const MobileMenu = ({ setIsMenuOpen, isMenuOpen }: TMobileMenuProps) => {
   );
 };
 
-export default MobileMenu;
+export default memo(MobileMenu);

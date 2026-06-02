@@ -13,7 +13,7 @@ import type {
 } from "./types";
 import Footer from "./components/Footer";
 import CategoryCarousel from "./components/CategoryCarousel";
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { calculateTotal } from "./utils/calculateTotal";
 import FavModal from "./components/FavModal";
 import cn from "./utils/cn";
@@ -27,38 +27,36 @@ function App() {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   const { theme, setTheme } = useTheme();
-  const totalPrice = calculateTotal(fav);
 
-  const addToFav = (item: TProduct) => {
+  const totalPrice = useMemo(() => calculateTotal(fav), [fav]);
+
+  const addToFav = useCallback((item: TProduct) => {
     setFav((prev) => [...prev, item]);
-  };
+  }, []);
 
-  const removeFromFav = (item: TProduct) => {
-    const copyArr = [...fav];
-    const newArr = copyArr.filter(
-      (product: TProduct) => product.id !== item.id,
-    );
-    setFav(newArr);
-  };
+  const removeFromFav = useCallback((item: TProduct) => {
+    setFav((prev) => prev.filter((product) => product.id !== item.id));
+  }, []);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === "black") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  }, [theme]);
 
   return (
     <>
-      <Header
-        fav={fav}
-        setShowModal={setShowModal}
-        setTheme={setTheme}
-        theme={theme}
-      />
+      <Header fav={fav} setShowModal={setShowModal} setTheme={setTheme} />
       <main
-        className={cn("min-h-screen py-4", {
-          "bg-dark-blue text-white": theme === "black",
-        })}
+        className={cn("dark:bg-dark-blue min-h-screen py-4 dark:text-white")}
       >
         <Container>
           <div
             className={cn(
-              "bg-light-orange mbe-8 flex w-full flex-col items-center justify-center gap-4 rounded-2xl py-6 md:flex-row",
-              { "bg-dark-blue text-white": theme === "black" },
+              "bg-light-orange dark:bg-dark-blue mbe-8 flex w-full flex-col items-center justify-center gap-4 rounded-2xl py-6 md:flex-row dark:text-white",
             )}
           >
             <p className="text-xl font-bold">C'est le moment de vendre</p>

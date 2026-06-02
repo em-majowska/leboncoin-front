@@ -17,17 +17,16 @@ type THeaderProps = {
   fav: TProducts | [];
   setShowModal: TSetState<boolean>;
   setTheme: TSetState<TTheme>;
-  theme: TTheme;
 };
 
-const Header = ({ fav, setShowModal, setTheme, theme }: THeaderProps) => {
+const Header = ({ fav, setShowModal, setTheme }: THeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
     <header
-      className={cn("sticky top-0 z-100 bg-white", {
-        "bg-dark-blue text-white": theme === "black",
-      })}
+      className={cn(
+        "dark:bg-dark-blue sticky top-0 z-100 bg-white dark:text-white",
+      )}
     >
       <Container className="flex flex-col gap-3 border-b border-mist-100 py-2 md:py-4">
         <div className="m-w-full flex">

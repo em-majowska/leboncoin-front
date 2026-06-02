@@ -14,3 +14,5 @@
 
   --color-light-gray: rgb(240, 242, 245);
 }
+
+@variant dark (&:where(.dark, .dark *));

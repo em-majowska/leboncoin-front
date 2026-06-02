@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import type { TProduct, TProducts } from "../types";
 import ProductTile from "./ProductTile";
@@ -53,4 +53,4 @@ const CategoryCarousel = ({
   );
 };
 
-export default CategoryCarousel;
+export default memo(CategoryCarousel);

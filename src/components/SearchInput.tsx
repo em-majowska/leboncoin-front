@@ -1,11 +1,9 @@
 import { CiSearch } from "react-icons/ci";
-import { useTheme } from "../utils/useTheme";
 import cn from "../utils/cn";
 
 type TSearchInputProps = { type: "mobile" | "desktop" };
 
 const SearchInput = ({ type }: TSearchInputProps) => {
-  const { theme } = useTheme();
   return type === "mobile" ? (
     <div className="bg-light-gray flex w-full items-center gap-2 rounded-2xl px-4 py-3 md:hidden">
       <CiSearch />
@@ -23,9 +21,9 @@ const SearchInput = ({ type }: TSearchInputProps) => {
         name="search-bar"
         id="search-bar"
         placeholder="Rechercher sur leboncoin"
-        className={cn("w-full bg-transparent text-sm outline-none", {
-          "text-black": theme === "black",
-        })}
+        className={cn(
+          "w-full bg-transparent text-sm outline-none dark:text-black",
+        )}
       />
       <div className="bg-orange rounded-2xl p-2">
         <CiSearch color="white" />

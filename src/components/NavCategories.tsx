@@ -2,7 +2,7 @@ import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import type { TCategories, TCategory } from "../types";
 import CategoryTile from "./CategoryTile";
 import Headline from "./Headline";
-import { useRef } from "react";
+import { memo, useRef } from "react";
 
 type TCategoriesProps = { categories: TCategories };
 
@@ -36,4 +36,4 @@ const Categories = ({ categories }: TCategoriesProps) => {
   );
 };
 
-export default Categories;
+export default memo(Categories);

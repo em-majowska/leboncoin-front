@@ -1,7 +1,6 @@
 import { FaHeart, FaRegHeart, FaStar } from "react-icons/fa";
 import type { TProduct } from "../types";
-import { useState } from "react";
-import { useTheme } from "../utils/useTheme";
+import { memo, useState } from "react";
 import cn from "../utils/cn";
 
 type TProductTileProps = {
@@ -12,7 +11,6 @@ type TProductTileProps = {
 
 const ProductTile = ({ product, addFav, removeFav }: TProductTileProps) => {
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
-  const { theme } = useTheme();
 
   return (
     <a href="">
@@ -53,8 +51,7 @@ const ProductTile = ({ product, addFav, removeFav }: TProductTileProps) => {
           {product.delivery && (
             <span
               className={cn(
-                "bg-light-blue rounded-xl p-1 px-2 text-xs font-bold",
-                { "text-black": theme === "black" },
+                "bg-light-blue rounded-xl p-1 px-2 text-xs font-bold dark:text-black",
               )}
             >
               Livraison possible
@@ -95,4 +92,4 @@ const ProductTile = ({ product, addFav, removeFav }: TProductTileProps) => {
   );
 };
 
-export default ProductTile;
+export default memo(ProductTile);
