@@ -5,20 +5,20 @@ import Button from "./Button";
 import { MdOutlineAddBox } from "react-icons/md";
 import SearchInput from "./SearchInput";
 import NavButton from "./NavButton";
-import {
-  FaRegBell,
-  FaRegHeart,
-  FaRegLightbulb,
-  FaRegUser,
-} from "react-icons/fa";
+import { FaRegBell, FaRegHeart, FaRegUser } from "react-icons/fa";
 import { LuMessageSquareText } from "react-icons/lu";
+import { TbSunMoon } from "react-icons/tb";
+import { useState } from "react";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
-    <header>
-      <Container className="flex flex-col gap-3 border-b border-mist-100 py-2">
+    <header className="sticky top-0 z-100 bg-white">
+      <Container className="flex flex-col gap-3 border-b border-mist-100 py-2 md:py-4">
         <div className="m-w-full flex">
-          <BurgerMenu />
+          <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
           <div className="align-items-center md: flex w-full place-items-center justify-center gap-2 md:justify-between">
             <img src={logo} alt="Le Bon Coin logo" className="h-7.5" />
             <Button
@@ -32,7 +32,7 @@ const Header = () => {
             <SearchInput type="desktop" />
             <div className="hidden gap-3 md:flex">
               <NavButton label="Thème">
-                <FaRegLightbulb size="20px" />
+                <TbSunMoon size="20px" />
               </NavButton>
               <NavButton label="Mes recherches">
                 <FaRegBell size="20px" />
@@ -105,6 +105,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+        <MobileMenu setIsOpen={setIsOpen} isOpen={isOpen} />
       </Container>
     </header>
   );

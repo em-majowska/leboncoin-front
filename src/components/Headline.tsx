@@ -1,15 +1,15 @@
 type THeadlineProps = {
   label: string;
-  type: "sm" | "md" | "lg";
+  level: 1 | 2 | 3;
 };
 
-const Headline = ({ label, type }: THeadlineProps) => {
-  switch (type) {
-    case "sm":
+const Headline = ({ label, level }: THeadlineProps) => {
+  switch (level) {
+    case 3:
       return <h3 className="mbe-3 text-lg font-bold">{label}</h3>;
-    case "md":
+    case 2:
       return <h2 className="mbe-3 text-xl font-bold">{label}</h2>;
-    case "lg":
+    case 1:
       return <h1 className="mbe-3 text-2xl font-bold">{label}</h1>;
   }
 };

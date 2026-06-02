@@ -25,7 +25,7 @@ const ProductTile = ({ product }: TProductTileProps) => {
             </p>
             {product.stars && (
               <div className="flex items-center gap-1">
-                <FaStar color="fuchsia" />
+                <FaStar className="text-dark-orange" />
                 <span className="font-bold"> {product.stars}</span>
                 {product.comments && (
                   <span className="text-xs">({product.comments})</span>
@@ -45,7 +45,7 @@ const ProductTile = ({ product }: TProductTileProps) => {
         </section>
         <section className="align-end">
           {product.delivery && (
-            <span className="rounded-xl bg-blue-100 p-1 px-2 text-xs font-bold">
+            <span className="bg-light-blue rounded-xl p-1 px-2 text-xs font-bold">
               Livraison possible
             </span>
           )}

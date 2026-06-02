@@ -1,7 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-sm: 768px; /* le bouton Déposer une annonce passe en dessous de C'est le moment de vendre ; */
+  --breakpoint-sm: 768px;
   --breakpoint-md: 970px;
   --breakpoint-lg: 1050px;
+
+  --color-orange: rgb(236, 90, 20);
+  --color-light-orange: rgb(255, 233, 222);
+  --color-dark-orange: rgb(184, 74, 20);
+
+  --color-light-blue: rgb(230, 242, 253);
+  --color-dark-blue: rgb(43, 52, 65);
+
+  --color-light-gray: rgb(240, 242, 245);
 }

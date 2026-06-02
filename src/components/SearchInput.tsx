@@ -4,7 +4,7 @@ type TSearchInputProps = { type: "mobile" | "desktop" };
 
 const SearchInput = ({ type }: TSearchInputProps) => {
   return type === "mobile" ? (
-    <div className="flex w-full items-center gap-2 rounded-2xl bg-mist-100 px-4 py-3 md:hidden">
+    <div className="bg-light-gray flex w-full items-center gap-2 rounded-2xl px-4 py-3 md:hidden">
       <CiSearch />
       <input
         type="search"
@@ -14,7 +14,7 @@ const SearchInput = ({ type }: TSearchInputProps) => {
       />
     </div>
   ) : (
-    <div className="hidden shrink items-center gap-2 rounded-2xl bg-mist-100 px-4 py-1 md:flex md:px-2">
+    <div className="bg-light-gray hidden shrink items-center gap-2 rounded-2xl px-4 py-1 md:flex md:px-2">
       <input
         type="search"
         name="search-bar"
@@ -22,7 +22,7 @@ const SearchInput = ({ type }: TSearchInputProps) => {
         placeholder="Rechercher sur leboncoin"
         className="w-full bg-transparent text-sm outline-none"
       />
-      <div className="rounded-2xl bg-orange-500 p-2">
+      <div className="bg-orange rounded-2xl p-2">
         <CiSearch color="white" />
       </div>
     </div>
