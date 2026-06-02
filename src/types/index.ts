@@ -1,7 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 
 export type TSetState<T> = Dispatch<SetStateAction<T>>;
-
 export type TCategory = {
   id: number;
   image: string;
@@ -27,4 +26,11 @@ export type TProducts = TProduct[];
 
 export type TProductsPayload = {
   [category: string]: TProducts;
+};
+
+export type TTheme = "white" | "black";
+
+export type TThemeContext = {
+  theme: TTheme;
+  setTheme: TSetState<TTheme>;
 };

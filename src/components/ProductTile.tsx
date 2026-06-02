@@ -1,13 +1,19 @@
 import { FaHeart, FaRegHeart, FaStar } from "react-icons/fa";
 import type { TProduct } from "../types";
 import { useState } from "react";
+import { useTheme } from "../utils/useTheme";
+import cn from "../utils/cn";
 
 type TProductTileProps = {
   product: TProduct;
+  addFav: (arg: TProduct) => void;
+  removeFav: (arg: TProduct) => void;
 };
 
-const ProductTile = ({ product }: TProductTileProps) => {
+const ProductTile = ({ product, addFav, removeFav }: TProductTileProps) => {
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
+  const { theme } = useTheme();
+
   return (
     <a href="">
       <article className="flex h-full w-45 shrink-0 flex-col justify-between gap-2">
@@ -45,7 +51,12 @@ const ProductTile = ({ product }: TProductTileProps) => {
         </section>
         <section className="align-end">
           {product.delivery && (
-            <span className="bg-light-blue rounded-xl p-1 px-2 text-xs font-bold">
+            <span
+              className={cn(
+                "bg-light-blue rounded-xl p-1 px-2 text-xs font-bold",
+                { "text-black": theme === "black" },
+              )}
+            >
               Livraison possible
             </span>
           )}
@@ -54,19 +65,29 @@ const ProductTile = ({ product }: TProductTileProps) => {
               <span className="text-xs text-mist-500">{product.place}</span>
               <span className="text-xs text-mist-500">{product.date}</span>
             </div>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                e.preventDefault();
-                setIsFavourite(!isFavourite);
-              }}
-            >
-              {isFavourite ? (
+            {isFavourite ? (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  setIsFavourite(!isFavourite);
+                  removeFav(product);
+                }}
+              >
                 <FaHeart size="24px" />
-              ) : (
+              </button>
+            ) : (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  setIsFavourite(!isFavourite);
+                  addFav(product);
+                }}
+              >
                 <FaRegHeart size="24px" />
-              )}
-            </button>
+              </button>
+            )}
           </div>
         </section>
       </article>

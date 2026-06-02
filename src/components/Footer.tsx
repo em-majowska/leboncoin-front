@@ -3,7 +3,7 @@ import Container from "./Container";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-blue mt-8 h-20">
+    <footer className="bg-dark-blue h-20">
       <Container className="flex h-full items-center justify-between">
         <p className="text-white">leboncoin 2006 - 2026</p>
         <p className="hidden text-white md:block">

@@ -8,27 +8,27 @@ import type { TSetState } from "../types";
 import cn from "../utils/cn";
 
 type TMobileMenuProps = {
-  setIsOpen: TSetState<boolean>;
-  isOpen: boolean;
+  setIsMenuOpen: TSetState<boolean>;
+  isMenuOpen: boolean;
 };
 
-const MobileMenu = ({ setIsOpen, isOpen }: TMobileMenuProps) => {
+const MobileMenu = ({ setIsMenuOpen, isMenuOpen }: TMobileMenuProps) => {
   return (
     <nav
       className={cn(
         "b-0 absolute top-0 left-0 flex h-screen w-full max-w-120 flex-col bg-white transition-transform duration-300 ease-in-out md:hidden",
         {
-          "-translate-x-full": isOpen === false,
-          "translate-x-0": isOpen === true,
+          "-translate-x-full": isMenuOpen === false,
+          "translate-x-0": isMenuOpen === true,
         },
       )}
-      aria-hidden={!isOpen}
+      aria-hidden={!isMenuOpen}
     >
       <div className="flex items-center justify-center p-4">
         <img src={logo} alt="Le Bon Coin logo" />
         <button
           className="hover:bg-light-gray absolute right-4 rounded-xl p-2 hover:cursor-pointer"
-          onClick={() => setIsOpen(false)}
+          onClick={() => setIsMenuOpen(false)}
         >
           <MdClose className="text-2xl" />
         </button>

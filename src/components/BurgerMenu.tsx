@@ -1,13 +1,16 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import type { TSetState } from "../types";
 
-type TBurgerMenuProps = { isOpen: boolean; setIsOpen: TSetState<boolean> };
+type TBurgerMenuProps = {
+  isMenuOpen: boolean;
+  setIsMenuOpen: TSetState<boolean>;
+};
 
-const BurgerMenu = ({ isOpen, setIsOpen }: TBurgerMenuProps) => {
+const BurgerMenu = ({ isMenuOpen, setIsMenuOpen }: TBurgerMenuProps) => {
   return (
     <button
       className="me-auto py-2 hover:cursor-pointer md:hidden"
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       <RxHamburgerMenu className="text-dark-blue text-4xl" />
     </button>

@@ -4,9 +4,19 @@ import type { TProduct, TProducts } from "../types";
 import ProductTile from "./ProductTile";
 import Headline from "./Headline";
 
-type TCategoryCarouselProps = { category: TProducts; label: string };
+type TCategoryCarouselProps = {
+  category: TProducts;
+  label: string;
+  addFav: (arg: TProduct) => void;
+  removeFav: (arg: TProduct) => void;
+};
 
-const CategoryCarousel = ({ category, label }: TCategoryCarouselProps) => {
+const CategoryCarousel = ({
+  category,
+  label,
+  addFav,
+  removeFav,
+}: TCategoryCarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -17,7 +27,14 @@ const CategoryCarousel = ({ category, label }: TCategoryCarouselProps) => {
         className="flex max-w-full scrollbar-none content-center gap-4 overflow-x-scroll"
       >
         {category.map((prod: TProduct) => {
-          return <ProductTile product={prod} key={prod.id} />;
+          return (
+            <ProductTile
+              product={prod}
+              key={prod.id}
+              addFav={addFav}
+              removeFav={removeFav}
+            />
+          );
         })}
         <div className="flex w-45 shrink-0 items-center justify-center">
           <button
