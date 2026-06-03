@@ -8,23 +8,26 @@ import NavButton from "./NavButton";
 import { FaRegBell, FaRegHeart, FaRegUser } from "react-icons/fa";
 import { LuMessageSquareText } from "react-icons/lu";
 import { TbSunMoon } from "react-icons/tb";
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import MobileMenu from "./MobileMenu";
-import type { TSetState, TTheme } from "../types";
+import type { TSetState } from "../types";
 import cn from "../utils/cn";
+import { ThemeContext } from "../context/themeContext";
 
 type THeaderProps = {
   favNum: number;
   setShowModal: TSetState<boolean>;
-  setTheme: TSetState<TTheme>;
 };
 
-const Header = ({ favNum, setShowModal, setTheme }: THeaderProps) => {
+const Header = ({ favNum, setShowModal }: THeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
+  const { setTheme } = useContext(ThemeContext);
+
   const handleThemeToggle = useCallback(() => {
-    setTheme((prev) => (prev === "white" ? "black" : "white"));
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   }, [setTheme]);
+
   return (
     <header
       className={cn(

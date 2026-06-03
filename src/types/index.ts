@@ -27,5 +27,4 @@ export type TProducts = TProduct[];
 export type TProductsPayload = {
   [category: string]: TProducts;
 };
-
-export type TTheme = "white" | "black";
+export type TTheme = "light" | "dark";
