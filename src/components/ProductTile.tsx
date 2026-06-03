@@ -71,7 +71,7 @@ const ProductTile = ({ product, addFav, removeFav }: TProductTileProps) => {
                   removeFav(product);
                 }}
               >
-                <FaHeart size="24px" />
+                <FaHeart size="24px" className="text-dark-orange" />
               </button>
             ) : (
               <button

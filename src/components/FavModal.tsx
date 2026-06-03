@@ -12,7 +12,7 @@ type TFavModalProps = {
 const FavModal = ({ fav, setShowModal, total }: TFavModalProps) => {
   return (
     <div
-      className="absolute inset-0 flex h-screen items-center justify-center bg-black/70"
+      className="sticky inset-0 z-101 flex h-screen items-center justify-center bg-black/70"
       onClick={() => setShowModal(false)}
     >
       <div

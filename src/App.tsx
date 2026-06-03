@@ -30,11 +30,11 @@ function App() {
 
   const totalPrice = useMemo(() => calculateTotal(fav), [fav]);
 
-  const addToFav = useCallback((item: TProduct) => {
+  const addToFav = useCallback((item: TProduct): void => {
     setFav((prev) => [...prev, item]);
   }, []);
 
-  const removeFromFav = useCallback((item: TProduct) => {
+  const removeFromFav = useCallback((item: TProduct): void => {
     setFav((prev) => prev.filter((product) => product.id !== item.id));
   }, []);
 
@@ -49,7 +49,11 @@ function App() {
 
   return (
     <>
-      <Header fav={fav} setShowModal={setShowModal} setTheme={setTheme} />
+      <Header
+        favNum={fav.length}
+        setShowModal={setShowModal}
+        setTheme={setTheme}
+      />
       <main
         className={cn("dark:bg-dark-blue min-h-screen py-4 dark:text-white")}
       >
@@ -81,10 +85,10 @@ function App() {
             removeFav={removeFromFav}
           />
         </Container>
-        {showModal && (
-          <FavModal fav={fav} setShowModal={setShowModal} total={totalPrice} />
-        )}
       </main>
+      {showModal && (
+        <FavModal fav={fav} setShowModal={setShowModal} total={totalPrice} />
+      )}
       <Footer />
     </>
   );

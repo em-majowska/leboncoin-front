@@ -10,16 +10,16 @@ import { LuMessageSquareText } from "react-icons/lu";
 import { TbSunMoon } from "react-icons/tb";
 import { useCallback, useState } from "react";
 import MobileMenu from "./MobileMenu";
-import type { TProducts, TSetState, TTheme } from "../types";
+import type { TSetState, TTheme } from "../types";
 import cn from "../utils/cn";
 
 type THeaderProps = {
-  fav: TProducts | [];
+  favNum: number;
   setShowModal: TSetState<boolean>;
   setTheme: TSetState<TTheme>;
 };
 
-const Header = ({ fav, setShowModal, setTheme }: THeaderProps) => {
+const Header = ({ favNum, setShowModal, setTheme }: THeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const handleThemeToggle = useCallback(() => {
@@ -58,9 +58,9 @@ const Header = ({ fav, setShowModal, setTheme }: THeaderProps) => {
                 onClick={() => setShowModal(true)}
               >
                 <FaRegHeart size="20px" />
-                {fav.length > 0 && (
+                {favNum > 0 && (
                   <div className="absolute -top-2 -right-1 flex size-5 items-center justify-center rounded-full bg-red-500 text-white">
-                    {fav.length}
+                    {favNum}
                   </div>
                 )}
               </NavButton>

@@ -30,7 +30,7 @@ const CategoryCarousel = ({
           return (
             <ProductTile
               product={prod}
-              key={prod.id}
+              key={`${label.slice(0, 3)}-${prod.id}`}
               addFav={addFav}
               removeFav={removeFav}
             />
