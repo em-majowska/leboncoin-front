@@ -1,21 +1,15 @@
-import { useRef, type Dispatch } from "react";
+import { useRef } from "react";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import type { TProduct, TProducts } from "../types";
 import ProductTile from "./ProductTile";
 import Headline from "./Headline";
-import type { TFavAction } from "../App";
 
 type TCategoryCarouselProps = {
   category: TProducts;
   label: string;
-  favDispatch: Dispatch<TFavAction>;
 };
 
-const CategoryCarousel = ({
-  category,
-  label,
-  favDispatch,
-}: TCategoryCarouselProps) => {
+const CategoryCarousel = ({ category, label }: TCategoryCarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -30,7 +24,6 @@ const CategoryCarousel = ({
             <ProductTile
               product={prod}
               key={`${label.slice(0, 3)}-${prod.id}`}
-              favDispatch={favDispatch}
             />
           );
         })}
@@ -43,7 +36,7 @@ const CategoryCarousel = ({
               });
             }}
           >
-            <FaRegArrowAltCircleLeft className="text-dark-blue text-5xl hover:cursor-pointer" />
+            <FaRegArrowAltCircleLeft className="text-dark-blue text-5xl hover:cursor-pointer dark:text-white" />
           </button>
         </div>
       </div>

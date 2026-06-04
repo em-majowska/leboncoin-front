@@ -2,12 +2,15 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-import { ThemeContextProvider } from "./context/themeContext.tsx";
+import { ThemeContextProvider } from "./contexts/providers/ThemeContextProvider.tsx";
+import { FavContextProvider } from "./contexts/providers/FavContextProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeContextProvider>
-      <App />
+      <FavContextProvider>
+        <App />
+      </FavContextProvider>
     </ThemeContextProvider>
   </StrictMode>,
 );

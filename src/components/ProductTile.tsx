@@ -1,16 +1,17 @@
 import { FaHeart, FaRegHeart, FaStar } from "react-icons/fa";
 import type { TProduct } from "../types";
-import { useState, type Dispatch } from "react";
+import { useState } from "react";
 import cn from "../utils/cn";
-import type { TFavAction } from "../App";
+import { useFavContext } from "../contexts/hooks/useFavContext";
 
 type TProductTileProps = {
   product: TProduct;
-  favDispatch: Dispatch<TFavAction>;
 };
 
-const ProductTile = ({ product, favDispatch }: TProductTileProps) => {
+const ProductTile = ({ product }: TProductTileProps) => {
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
+
+  const { favDispatch } = useFavContext();
 
   return (
     <a href="">

@@ -8,11 +8,12 @@ import NavButton from "./NavButton";
 import { FaRegBell, FaRegHeart, FaRegUser } from "react-icons/fa";
 import { LuMessageSquareText } from "react-icons/lu";
 import { TbSunMoon } from "react-icons/tb";
-import { memo, useCallback, useContext, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import type { TSetState } from "../types";
 import cn from "../utils/cn";
-import { ThemeContext } from "../context/themeContext";
+import { useFavContext } from "../contexts/hooks/useFavContext";
+import { useThemeContext } from "../contexts/hooks/useThemeContext";
 
 const CATEGORIES_LIST = [
   "Immobilier",
@@ -28,14 +29,14 @@ const CATEGORIES_LIST = [
 ];
 
 type THeaderProps = {
-  favNum: number;
   setShowModal: TSetState<boolean>;
 };
 
-const Header = ({ favNum, setShowModal }: THeaderProps) => {
+const Header = ({ setShowModal }: THeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const { setTheme } = useContext(ThemeContext);
+  const { setTheme } = useThemeContext();
+  const { favState } = useFavContext();
 
   const handleThemeToggle = useCallback(() => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
@@ -74,9 +75,9 @@ const Header = ({ favNum, setShowModal }: THeaderProps) => {
                 onClick={() => setShowModal(true)}
               >
                 <FaRegHeart size="20px" />
-                {favNum > 0 && (
+                {favState.fav.length > 0 && (
                   <div className="absolute -top-2 -right-1 flex size-5 items-center justify-center rounded-full bg-red-500 text-white">
-                    {favNum}
+                    {favState.fav.length}
                   </div>
                 )}
               </NavButton>

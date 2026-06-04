@@ -1,15 +1,17 @@
-import type { TProducts, TSetState } from "../types";
+import { useContext } from "react";
+import type { TSetState } from "../types";
 import cn from "../utils/cn";
 import FavTile from "./FavTile";
 import Headline from "./Headline";
+import { FavContext } from "../contexts/FavContext";
 
 type TFavModalProps = {
-  fav: TProducts;
   setShowModal: TSetState<boolean>;
-  total: number;
 };
 
-const FavModal = ({ fav, setShowModal, total }: TFavModalProps) => {
+const FavModal = ({ setShowModal }: TFavModalProps) => {
+  const { favState } = useContext(FavContext);
+
   return (
     <div
       className="sticky inset-0 z-101 flex h-screen items-center justify-center bg-black/70"
@@ -24,7 +26,7 @@ const FavModal = ({ fav, setShowModal, total }: TFavModalProps) => {
         <Headline level={2} label="Mes Favoris" />
         <div className="flex flex-1 flex-col justify-between gap-5">
           <ul className="mt-6 flex flex-col gap-4">
-            {fav.map((product) => {
+            {favState.fav.map((product) => {
               return (
                 <li key={product.id}>
                   <FavTile product={product} />
@@ -34,7 +36,7 @@ const FavModal = ({ fav, setShowModal, total }: TFavModalProps) => {
           </ul>
           <p className="flex justify-between font-bold">
             <span>Prix total: </span>
-            <span>{total} €</span>
+            <span>{favState.totalPrice} €</span>
           </p>
         </div>
       </div>

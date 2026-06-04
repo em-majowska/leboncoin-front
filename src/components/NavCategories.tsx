@@ -28,7 +28,7 @@ const Categories = ({ categories }: TCategoriesProps) => {
               });
             }}
           >
-            <FaRegArrowAltCircleLeft className="text-dark-blue text-5xl hover:cursor-pointer" />
+            <FaRegArrowAltCircleLeft className="text-dark-blue text-5xl hover:cursor-pointer dark:text-white" />
           </button>
         </div>
       </div>

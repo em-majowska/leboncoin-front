@@ -5,59 +5,20 @@ import Container from "./components/Container";
 import Headline from "./components/Headline";
 import data from "./assets/data.json";
 import Categories from "./components/NavCategories";
-import type {
-  TCategories,
-  TProduct,
-  TProducts,
-  TProductsPayload,
-} from "./types";
+import type { TCategories, TProductsPayload } from "./types";
 import Footer from "./components/Footer";
 import CategoryCarousel from "./components/CategoryCarousel";
-import { useContext, useEffect, useReducer, useState } from "react";
+import { useEffect, useState } from "react";
 import FavModal from "./components/FavModal";
 import cn from "./utils/cn";
-import { ThemeContext } from "./context/themeContext";
-
-type TFavState = {
-  fav: TProducts | [];
-  totalPrice: number;
-};
-
-export type TFavAction =
-  | { type: "add_to_fav"; payload: TProduct }
-  | { type: "remove_from_fav"; payload: TProduct };
-
-const favReducer = (state: TFavState, action: TFavAction): TFavState => {
-  const { type, payload } = action;
-
-  switch (type) {
-    case "add_to_fav":
-      return {
-        ...state,
-        fav: [...state.fav, payload],
-        totalPrice: state.totalPrice + payload.price,
-      };
-    case "remove_from_fav":
-      return {
-        ...state,
-        fav: state.fav.filter((product) => product.id !== payload.id),
-        totalPrice: state.totalPrice - payload.price,
-      };
-  }
-};
+import { useThemeContext } from "./contexts/hooks/useThemeContext";
 
 function App() {
   const categories: TCategories = data.categories;
   const products: TProductsPayload = data.products;
 
-  const [favState, favDispatch] = useReducer(favReducer, {
-    fav: [],
-    totalPrice: 0,
-  });
-  const { fav, totalPrice } = favState;
-
   const [showModal, setShowModal] = useState<boolean>(false);
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useThemeContext();
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -70,7 +31,7 @@ function App() {
 
   return (
     <>
-      <Header favNum={fav.length} setShowModal={setShowModal} />
+      <Header setShowModal={setShowModal} />
       <main
         className={cn("dark:bg-dark-blue min-h-screen py-4 dark:text-white")}
       >
@@ -92,18 +53,11 @@ function App() {
           <CategoryCarousel
             category={products.tablets}
             label="Tablettes & liseuses"
-            favDispatch={favDispatch}
           />
-          <CategoryCarousel
-            category={products.consols}
-            label="Consoles"
-            favDispatch={favDispatch}
-          />
+          <CategoryCarousel category={products.consols} label="Consoles" />
         </Container>
       </main>
-      {showModal && (
-        <FavModal fav={fav} setShowModal={setShowModal} total={totalPrice} />
-      )}
+      {showModal && <FavModal setShowModal={setShowModal} />}
       <Footer />
     </>
   );
