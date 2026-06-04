@@ -1,5 +1,3 @@
-import { memo } from "react";
-
 type THeadlineProps = {
   label: string;
   level: 1 | 2 | 3;
@@ -16,4 +14,4 @@ const Headline = ({ label, level }: THeadlineProps) => {
   }
 };
 
-export default memo(Headline);
+export default Headline;

@@ -6,7 +6,7 @@ import { LuMessageSquareText, LuTicketPercent } from "react-icons/lu";
 import logo from "../assets/logo.svg";
 import type { TSetState } from "../types";
 import cn from "../utils/cn";
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
 
 const CATEGORIES_LIST = [
   "Immobilier",
@@ -104,4 +104,4 @@ const MobileMenu = ({ setIsMenuOpen, isMenuOpen }: TMobileMenuProps) => {
   );
 };
 
-export default memo(MobileMenu);
+export default MobileMenu;

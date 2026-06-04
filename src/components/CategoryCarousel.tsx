@@ -1,21 +1,20 @@
-import { memo, useRef } from "react";
+import { useRef, type Dispatch } from "react";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import type { TProduct, TProducts } from "../types";
 import ProductTile from "./ProductTile";
 import Headline from "./Headline";
+import type { TFavAction } from "../App";
 
 type TCategoryCarouselProps = {
   category: TProducts;
   label: string;
-  addFav: (arg: TProduct) => void;
-  removeFav: (arg: TProduct) => void;
+  favDispatch: Dispatch<TFavAction>;
 };
 
 const CategoryCarousel = ({
   category,
   label,
-  addFav,
-  removeFav,
+  favDispatch,
 }: TCategoryCarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -31,8 +30,7 @@ const CategoryCarousel = ({
             <ProductTile
               product={prod}
               key={`${label.slice(0, 3)}-${prod.id}`}
-              addFav={addFav}
-              removeFav={removeFav}
+              favDispatch={favDispatch}
             />
           );
         })}
@@ -53,4 +51,4 @@ const CategoryCarousel = ({
   );
 };
 
-export default memo(CategoryCarousel);
+export default CategoryCarousel;

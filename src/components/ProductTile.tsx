@@ -1,15 +1,15 @@
 import { FaHeart, FaRegHeart, FaStar } from "react-icons/fa";
 import type { TProduct } from "../types";
-import { memo, useState } from "react";
+import { useState, type Dispatch } from "react";
 import cn from "../utils/cn";
+import type { TFavAction } from "../App";
 
 type TProductTileProps = {
   product: TProduct;
-  addFav: (arg: TProduct) => void;
-  removeFav: (arg: TProduct) => void;
+  favDispatch: Dispatch<TFavAction>;
 };
 
-const ProductTile = ({ product, addFav, removeFav }: TProductTileProps) => {
+const ProductTile = ({ product, favDispatch }: TProductTileProps) => {
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
 
   return (
@@ -68,7 +68,7 @@ const ProductTile = ({ product, addFav, removeFav }: TProductTileProps) => {
                   e.stopPropagation();
                   e.preventDefault();
                   setIsFavourite(!isFavourite);
-                  removeFav(product);
+                  favDispatch({ type: "remove_from_fav", payload: product });
                 }}
               >
                 <FaHeart size="24px" className="text-dark-orange" />
@@ -79,7 +79,7 @@ const ProductTile = ({ product, addFav, removeFav }: TProductTileProps) => {
                   e.stopPropagation();
                   e.preventDefault();
                   setIsFavourite(!isFavourite);
-                  addFav(product);
+                  favDispatch({ type: "add_to_fav", payload: product });
                 }}
               >
                 <FaRegHeart size="24px" />
@@ -92,4 +92,4 @@ const ProductTile = ({ product, addFav, removeFav }: TProductTileProps) => {
   );
 };
 
-export default memo(ProductTile);
+export default ProductTile;

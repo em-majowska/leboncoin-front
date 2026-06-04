@@ -1,4 +1,3 @@
-import { memo } from "react";
 import type { TCategory } from "../types";
 
 type TCategoryTileProps = {
@@ -21,4 +20,4 @@ const CategoryTile = ({ item }: TCategoryTileProps) => {
   );
 };
 
-export default memo(CategoryTile);
+export default CategoryTile;

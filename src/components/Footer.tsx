@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import Container from "./Container";
+import { memo } from "react";
 
 const Footer = () => {
   return (
@@ -23,4 +24,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

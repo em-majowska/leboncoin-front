@@ -8,11 +8,24 @@ import NavButton from "./NavButton";
 import { FaRegBell, FaRegHeart, FaRegUser } from "react-icons/fa";
 import { LuMessageSquareText } from "react-icons/lu";
 import { TbSunMoon } from "react-icons/tb";
-import { useCallback, useContext, useState } from "react";
+import { memo, useCallback, useContext, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import type { TSetState } from "../types";
 import cn from "../utils/cn";
 import { ThemeContext } from "../context/themeContext";
+
+const CATEGORIES_LIST = [
+  "Immobilier",
+  "Véhicules",
+  "Locations de vacances",
+  "Emploi",
+  "Mode",
+  "Maison & Jardin",
+  "Famille",
+  "Électronique",
+  "Loisirs",
+  "Autres",
+];
 
 type THeaderProps = {
   favNum: number;
@@ -79,56 +92,13 @@ const Header = ({ favNum, setShowModal }: THeaderProps) => {
         <SearchInput type="mobile" />
         <nav className="max-w-full scrollbar-none overflow-x-scroll">
           <ul className="flex gap-6">
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Immobilier
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Véhicules
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Locations de vacances
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Emploi
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Mode
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Maison & Jardin
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Famille
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Électronique
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Loisirs
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-nowrap">
-                Autres
-              </a>
-            </li>
+            {CATEGORIES_LIST.map((cat) => (
+              <li>
+                <a href="" className="text-sm text-nowrap">
+                  {cat}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
         <MobileMenu setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
@@ -137,4 +107,4 @@ const Header = ({ favNum, setShowModal }: THeaderProps) => {
   );
 };
 
-export default Header;
+export default memo(Header);
