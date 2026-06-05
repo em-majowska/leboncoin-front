@@ -1,22 +1,15 @@
-import { createContext, type ActionDispatch } from "react";
-import type { TProduct, TProducts } from "../types";
-
-export type TFavState = {
-  fav: TProducts | [];
-  totalPrice: number;
-};
-
-export type TFavAction = {
-  type: "add_to_fav" | "remove_from_fav";
-  payload: TProduct;
-};
+import { createContext, type Dispatch } from "react";
+import type { TProducts } from "../types";
+import type { TFavAction } from "./providers/FavContextProvider";
 
 export type TFavReducer = {
-  favState: TFavState;
-  favDispatch: ActionDispatch<[action: TFavAction]>;
+  fav: TProducts;
+  totalPrice: number;
+  favDispatch: Dispatch<TFavAction>;
 };
 
 export const FavContext = createContext<TFavReducer>({
-  favState: { fav: [], totalPrice: 0 },
+  fav: [],
+  totalPrice: 0,
   favDispatch: () => {},
 });

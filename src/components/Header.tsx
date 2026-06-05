@@ -36,7 +36,7 @@ const Header = ({ setShowModal }: THeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const { setTheme } = useThemeContext();
-  const { favState } = useFavContext();
+  const { fav } = useFavContext();
 
   const handleThemeToggle = useCallback(() => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
@@ -75,9 +75,9 @@ const Header = ({ setShowModal }: THeaderProps) => {
                 onClick={() => setShowModal(true)}
               >
                 <FaRegHeart size="20px" />
-                {favState.fav.length > 0 && (
+                {fav.length > 0 && (
                   <div className="absolute -top-2 -right-1 flex size-5 items-center justify-center rounded-full bg-red-500 text-white">
-                    {favState.fav.length}
+                    {fav.length}
                   </div>
                 )}
               </NavButton>

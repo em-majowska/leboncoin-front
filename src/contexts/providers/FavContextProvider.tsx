@@ -1,7 +1,16 @@
 import { useReducer, type ReactNode } from "react";
-import type { TFavAction, TFavState } from "../FavContext";
 import { FavContext } from "../FavContext";
+import type { TProduct, TProducts } from "../../types";
 
+type TFavState = {
+  fav: TProducts | [];
+  totalPrice: number;
+};
+
+export type TFavAction = {
+  type: "add_to_fav" | "remove_from_fav";
+  payload: TProduct;
+};
 type TFavContextProvider = {
   children: ReactNode;
 };
@@ -32,7 +41,13 @@ export const FavContextProvider = ({ children }: TFavContextProvider) => {
   });
 
   return (
-    <FavContext.Provider value={{ favState, favDispatch }}>
+    <FavContext.Provider
+      value={{
+        fav: favState.fav,
+        totalPrice: favState.totalPrice,
+        favDispatch: favDispatch,
+      }}
+    >
       {children}
     </FavContext.Provider>
   );

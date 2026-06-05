@@ -10,7 +10,7 @@ type TFavModalProps = {
 };
 
 const FavModal = ({ setShowModal }: TFavModalProps) => {
-  const { favState } = useContext(FavContext);
+  const { fav, totalPrice } = useContext(FavContext);
 
   return (
     <div
@@ -26,7 +26,7 @@ const FavModal = ({ setShowModal }: TFavModalProps) => {
         <Headline level={2} label="Mes Favoris" />
         <div className="flex flex-1 flex-col justify-between gap-5">
           <ul className="mt-6 flex flex-col gap-4">
-            {favState.fav.map((product) => {
+            {fav.map((product) => {
               return (
                 <li key={product.id}>
                   <FavTile product={product} />
@@ -36,7 +36,7 @@ const FavModal = ({ setShowModal }: TFavModalProps) => {
           </ul>
           <p className="flex justify-between font-bold">
             <span>Prix total: </span>
-            <span>{favState.totalPrice} €</span>
+            <span>{totalPrice} €</span>
           </p>
         </div>
       </div>
